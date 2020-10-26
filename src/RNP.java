@@ -28,19 +28,24 @@ public class RNP {
                 stack.push(a+b);
             }
             else if (t.equals("-")) {
-                
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a-b);
             }
             else if (t.equals("*")) {
-                
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a*b);
             }            
             else if (t.equals("/")) {
-                
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a/b);
             }
             else {
                 stack.push(Integer.parseInt(t));
             }
-            System.out.println("The answer is :" + stack.pop());
-
         }
+        System.out.println("The answer is :" + stack.pop());
     }
 }

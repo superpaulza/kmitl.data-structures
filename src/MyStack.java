@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class MyStack {
     public static void main(String[] args) {
-        
+        new MyStack().printBinary(10);
     }
 
     //implement with printBinary
@@ -13,7 +13,7 @@ public class MyStack {
             n/=2;    
         }
         while(!s.isEmpty()) {
-            System.out.println(s.pop());
+            System.out.print(s.pop());
         }
     }
 
