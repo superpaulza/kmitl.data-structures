@@ -18,34 +18,30 @@ public class RNP {
     //     R3: 3 + 2 = 5
     public static void main(String[] args) {
         String rpn = (new Scanner(System.in)).nextLine();
-        MyStackA stack = new MyStackA();
+        MyStackL stack = new MyStackL();
         StringTokenizer st = new StringTokenizer(rpn," ");
         while(st.hasMoreTokens()) {
             String t = st.nextToken();
-            if(t.equals("+")) {
-                int b = stack.pop();
-                int a = stack.pop();
-                stack.push(a+b);
-            }
-            else if (t.equals("-")) {
-                int b = stack.pop();
-                int a = stack.pop();
-                stack.push(a-b);
-            }
-            else if (t.equals("*")) {
+            if(t.equals("*")) {
                 int b = stack.pop();
                 int a = stack.pop();
                 stack.push(a*b);
-            }            
-            else if (t.equals("/")) {
+            } else if (t.equals("/")) {
                 int b = stack.pop();
                 int a = stack.pop();
                 stack.push(a/b);
-            }
-            else {
+            } else if (t.equals("+")) {
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a+b);
+            } else if (t.equals("-")) {
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a-b);
+            } else {
                 stack.push(Integer.parseInt(t));
             }
         }
-        System.out.println("The answer is :" + stack.pop());
+        System.out.println("The answer is : " + stack.pop());
     }
 }
